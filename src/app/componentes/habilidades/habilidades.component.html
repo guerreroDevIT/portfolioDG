@@ -1,0 +1,15 @@
+<div class="card mat-card">
+  <div class="card-titles">
+      <h2> <b>Habilidades</b> </h2>
+      <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div>
+      <p> {{miPortfolio.habilidad}} </p>
+  </div>
+  <hr>
+  <br>
+  <div *ngFor="let habilidates of educacionList">
+      <h4>{{habilidates.tecnologia}}</h4>
+      <p>{{habilidates.nivel}}</p>
+      <br>
+  </div>
+
+</div>

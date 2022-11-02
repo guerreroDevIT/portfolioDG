@@ -1,0 +1,98 @@
+{
+  "name": "Daniel Guerrero",
+  "ubication": "Córdoba (Argentina)",
+  "position": "Desarrollador Fullstack Trainee",
+  "backImage": "https://cdn.pixabay.com/photo/2016/07/30/19/56/banner-1557881__340.jpg",
+  "image": "https://i.ibb.co/9rqX5b7/imagen-Perfil.png",
+
+  "about": "Estoy en reciente formación de las Tecnologías de la Información. (HTML, CSS, Bootstrap, Javascript, Git, Github, Angular, SQL, Java, Spring Boot, MongoDB). Adicionalmente poseo conocimiento en electrónica de control y experiencia en sistemas automatizados de procesos industriales.",
+
+  "experience": [{
+    "company": "API",
+    "rubro": "Automatización Industrial",
+    "img": "",
+    "start": "2019",
+    "end": "2020",
+    "resumen": "Automatización de procesos industriales"
+  },
+  {
+    "company": "HDB",
+    "rubro": "Servicios Eléctricos",
+    "img": "",
+    "start": "2018",
+    "end": "2019",
+    "resumen": "Instalación de sistemas eléctricos."
+  },
+  {
+    "company": "ESTACIÓN ELÉCTRICA",
+    "rubro": "Sistemas de Control",
+    "img": "",
+    "start": "1998",
+    "end": "2017",
+    "resumen": "Instalación, Pruebas, Puesta en servicio y Mantenimiento a Sistemas automatizados de mediciones, instrumentación y control de estaciones y centrales eléctricas."
+  }],
+
+  "formacion": [{
+    "institute": "Argentina Programa",
+    "rubro": "Java Full Stack",
+    "img": "",
+    "start": "",
+    "end": "",
+    "resumen": "HTML,CSS, Bootstrap, Git, Github, Angular, SQL, Java, Spring Boot, MongoDB."
+  },
+  {
+    "institute": "Wall Street Institute",
+    "rubro": "Ingles básico, comprensión lectora",
+    "img": "",
+    "start": "",
+    "end": "",
+    "resumen": "Nivel: A1, A2, B1."
+  },
+  {
+    "institute": "Universidad Politécnica António José de Sucre",
+    "rubro": "Automatización y Control",
+    "img": "",
+    "start": "",
+    "end": "",
+    "resumen": "Técnico Universitario."
+  },
+  {
+    "institute": "Universidad Politécnica António José de Sucre",
+    "rubro": "Electrónica",
+    "img": "",
+    "start": "",
+    "end": "",
+    "resumen": "Ingeniería (Incompleto)."
+  }],
+
+  "habilidades": [{
+    "tecnologia": "HTML, CSS, Javascript & Bootstrap",
+    "img": "",
+    "start": "",
+    "end": "",
+    "nivel": "Intermedio"
+  },
+  {
+    "tecnologia": "Angular, Node & Java",
+    "img": "",
+    "start": "",
+    "end": "",
+    "nivel": "Básico"
+  },
+  {
+    "tecnologia": "SQL, Express & MongoDB",
+    "img": "",
+    "start": "",
+    "end": "",
+    "nivel": "Básico"
+  },
+  {
+    "tecnologia": "Git, Github & Scrum",
+    "img": "",
+    "start": "",
+    "end": "",
+    "nivel": "Intermedio"
+  }],
+
+  "habilidad": "He demostrado capacidad de trabajo en equipo, responsabilidad y calidad en la ejecución de las actividades, siguiendo las normas, planos y procedimientos establecidos por la empresa. Utilizando herramientas y tecnologías computacionales en mi desempeño profesional."
+}

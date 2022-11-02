@@ -1,0 +1,35 @@
+<div class="card mat-card" id="first-card">
+  <div id="profile-background"> <img [src] ="miPortfolio.backImage" alt=""> </div>
+  <div id="info" style="padding: 16px">
+      <div id="info-img">
+          <img class="profile-image" [src] ="miPortfolio.image" alt="imagen de perfil">
+          <div class="btn-edit"> <a href="#" class="btn-right"> <i class="fa fa-pen"></i></a> </div>
+      </div>
+      <div id="info-data">
+          <div>
+              <h1> {{miPortfolio.name}} </h1>
+              <div id="info-company"> {{miPortfolio.position}} </div>
+              <div id="info-contact">
+                  <span> {{miPortfolio.ubication}} </span>
+                  <br>
+                  <span> <a href = "mailto: dguerrero2090@gmail.com">dguerrero2090@gmail.com</a> </span>
+                  <br>
+                  <p>351 7448046</p>
+              </div>
+          </div>
+          <ul id="info-details">
+              <li><a href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa" target="blank">
+                      <img src="http://yoprogramo.org.ar/styles/favicons/favicon-180.png" alt="logo yo programo">
+                      <h2>Yo Programo</h2>
+                  </a>
+              </li>
+              <br>
+              <li><a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa" target="blank">
+                      <img src="https://lh3.googleusercontent.com/BWDfHOCxmt86gbLw3V3-n4Hz1RkoDgj2Kh2y6HSmrB32tnBxrgs82ZWEf2cE5TT2vqu2kQ=s170" alt="logo argentina programa">
+                      <h2>Argentina Programa</h2>
+                  </a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</div>
