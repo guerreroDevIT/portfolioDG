@@ -1,15 +1,254 @@
 <div class="card mat-card">
   <div class="card-titles">
-      <h2> <b>Habilidades</b> </h2>
-      <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div>
-      <p> {{miPortfolio.habilidad}} </p>
+    <h2><b>Habilidades</b></h2>
+    <!-- <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div>-->
+    <p>{{ miPortfolio.habilidad }}</p>
+    <div class="row">
+      <div>
+        <div
+          style="float: left; margin-right: 2.5%"
+          class="btn-edit"
+          onclick="showTextarea('edit-habilidades', 'checkhabilidades')"
+        >
+          <button *ngIf="isLogged" class="btn-edit btn btn-outline">
+            <i class="fas fa-pen" style="font-size: 24px"></i>
+          </button>
+        </div>
+
+        <div
+          style="float: left"
+          class="btn-edit"
+          onclick="eliminateSeccion('habilidades')"
+        >
+          <button *ngIf="isLogged" class="btn btn-outline">
+            <i class="fas fa-xmark" style="font-size: 24px"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-  <hr>
-  <br>
-  <div *ngFor="let habilidates of educacionList">
+  <hr />
+
+  <!-- <div *ngFor="let habilidates of habilidadesList">
       <h4>{{habilidates.tecnologia}}</h4>
       <p>{{habilidates.nivel}}</p>
       <br>
-  </div>
+  </div> -->
 
+  <br />
+
+  <aside class="skills aside section">
+    <div class="section-inner shadow-sm rounded">
+      <h2 class="heading">Gráfico</h2>
+      <div class="content">
+        <div id="habilidades" class="skillset">
+          <div *ngFor="let habilidades of habili" class="item">
+            <div style="display: flex; flex-direction: row; margin-top: 2%">
+              <h3 class="level-title">{{ habilidades.nombreE }}</h3>
+              <small>
+                <div style="display: flex; flex-direction: row">
+                  <button
+                    style="margin-bottom: 0%; margin-left: 7.5%"
+                    *ngIf="isLogged"
+                    class="btn btn-danger"
+                    (click)="delete(habilidades.id)"
+                  >
+                    <i class="bi bi-trash-fill"></i>BORRAR
+                  </button>
+                  <!-- INICIO 20230210 -->
+
+                  <button
+                    style="margin-left: 2%"
+                    *ngIf="isLogged"
+                    class="btn btn-warning"
+                    (click)="
+                      openUpdateForm('edit-habilidadesmod', habilidades.id)
+                    "
+                    onclick="showTextarea('edit-habilidadesmod', 'checkhabilidadesmod')"
+                  >
+                    <i class="bi bi-trash-fill"></i>EDITAR
+                  </button>
+                  <!-- FIN 20230210 -->
+                </div>
+              </small>
+              <p style="margin-left: auto">{{ habilidades.descripcionE }}</p>
+            </div>
+            <div class="level-bar progress">
+              <div
+                class="progress-bar level-bar-inner"
+                role="progressbar"
+                [style]="'width: ' + habilidades.porcentaje + '%'"
+                [attr.aria-valuenow]="habilidades.porcentaje"
+                ria-valuemin="0"
+                [attr.aria-valuemax]="habilidades.porcentaje"
+              ></div>
+            </div>
+          </div>
+
+          <div>
+            <form
+              style="display: none; padding-top: 4rem"
+              id="edit-habilidadesmod"
+              (ngSubmit)="onUpdate(objid.id)"
+              novalidate
+              #f="ngForm"
+            >
+              <div class="form-group">
+                <label for="nombreE">Habilidad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreE"
+                  name="nombreE"
+                  [(ngModel)]="nombreEM"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="descripcionE">Nivel</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="descripcionE"
+                  name="descripcionE"
+                  [(ngModel)]="descripcionEM"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="porcentaje">Porcetaje</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="porcentaje"
+                  name="porcentaje"
+                  [(ngModel)]="porcentajeM"
+                  required
+                />
+              </div>
+
+              <button class="btn btn-primary">Modificar Información</button>
+              <!-- <div>
+                    <input id="edit-habilidades" type="text" oninput="changeParagraph(this.value, 'text-habilidades')" style="display:none">
+                  </div>
+
+                  <input type="file" id="filehabilidades" onchange="showFile(this, 'text-habilidades')" style="display:none"> -->
+            </form>
+            <div
+              class="btn-edit"
+              onclick="hideTextarea('edit-habilidadesmod', 'checkhabilidadesmod')"
+            >
+              <button
+                style="display: none"
+                id="checkhabilidadesmod"
+                *ngIf="isLogged"
+                class="btn btn-outline me-2"
+              >
+                <i class="fas fa-check" style="font-size: 24px"></i>
+              </button>
+            </div>
+          </div>
+          <div>
+            <form
+              style="display: none; padding-top: 4rem"
+              id="edit-habilidades"
+              (ngSubmit)="onCreate()"
+              novalidate
+              #f="ngForm"
+            >
+              <div class="form-group">
+                <label for="nombreE">Habilidad</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreE"
+                  name="nombreE"
+                  [(ngModel)]="nombreE"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="descripcionE">Nivel</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="descripcionE"
+                  name="descripcionE"
+                  [(ngModel)]="descripcionE"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="porcentaje">Porcetaje</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="porcentaje"
+                  name="porcentaje"
+                  [(ngModel)]="porcentaje"
+                  required
+                />
+              </div>
+
+              <button class="btn btn-primary">Agregar Información</button>
+              <div>
+                <input
+                  id="edit-habilidades"
+                  type="text"
+                  oninput="changeParagraph(this.value, 'text-habilidades')"
+                  style="display: none"
+                />
+              </div>
+
+              <input
+                type="file"
+                id="filehabilidades"
+                onchange="showFile(this, 'text-habilidades')"
+                style="display: none"
+              />
+            </form>
+            <div
+              class="btn-edit"
+              onclick="hideTextarea('edit-habilidades', 'checkhabilidades', 'filehabilidades')"
+            >
+              <button
+                style="display: none"
+                id="checkhabilidades"
+                *ngIf="isLogged"
+                class="btn btn-outline me-2"
+              >
+                <i class="fas fa-check" style="font-size: 24px"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- <div class="item">
+                    <h3 class="level-title">HTML5,CSS3, Javascript &amp; Bootstrap<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="Frontend"></span></h3>
+
+                    <div class="level-bar progress">
+      <div class="progress-bar level-bar-inner" role="progressbar" style="width: 96%" aria-valuenow="96"  aria-valuemin="0" aria-valuemax="96"></div>
+  </div>
+                </div>
+
+                <div class="item">
+                    <h3 class="level-title">Java, Angular &amp; Node<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="Backend"><i class="fas fa-info-circle"></i>Pro</span></h3>
+                    <div class="level-bar progress">
+      <div class="progress-bar level-bar-inner" role="progressbar" style="width: 86%" aria-valuenow="86"  aria-valuemin="0" aria-valuemax="86"></div>
+  </div>
+                </div>
+
+                <div class="item">
+                    <h3 class="level-title">SQL, Express &amp; MongoDB<span class="level-label" data-bs-toggle="tooltip" data-bs-placement="left" title="Bases de Datos"><i class="fas fa-info-circle"></i>Intermedio</span></h3>
+                    <div class="level-bar progress">
+      <div class="progress-bar level-bar-inner" role="progressbar" style="width: 75%" aria-valuenow="75"  aria-valuemin="0" aria-valuemax="75"></div>
+  </div>
+                </div> -->
+        </div>
+      </div>
+    </div>
+  </aside>
 </div>

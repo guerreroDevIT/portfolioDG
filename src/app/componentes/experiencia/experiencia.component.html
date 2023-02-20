@@ -1,16 +1,178 @@
 <div class="card mat-card">
   <div id="experience">
-      <div class="card-titles">
-          <h2> <b>Experiencia</b> </h2>
-          <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div>
-      </div>
-      <hr>
-      <br>
-      <div *ngFor="let experientia of educacionList">
-        <h4>{{experientia.company}} - {{experientia.rubro}}</h4>
-        <p>{{experientia.resumen}}</p>
-        <br>
-      </div>
+    <div class="card-titles">
+      <h2><b>Experiencia</b></h2>
+      <!-- <div class="btn-edit"><a href="#" class="btn-right"><i class="fa fa-plus"></i></a></div> -->
+      <div class="row">
+        <div>
+          <div
+            style="float: left; margin-right: 2.5%"
+            class="btn-edit"
+            onclick="showTextarea('edit-experience', 'checkexperience')"
+          >
+            <button *ngIf="isLogged" class="btn-edit btn btn-outline">
+              <i class="fas fa-pen" style="font-size: 24px"></i>
+            </button>
+          </div>
 
+          <div
+            style="float: left"
+            class="btn-edit"
+            onclick="eliminateSeccion('experience')"
+          >
+            <button *ngIf="isLogged" class="btn btn-outline">
+              <i class="fas fa-xmark" style="font-size: 24px"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <br />
+    <div *ngFor="let experientia of expe">
+      <small>
+        <button
+          *ngIf="isLogged"
+          class="btn btn-danger"
+          (click)="delete(experientia.id)"
+        >
+          <i class="bi bi-trash-fill"></i>BORRAR
+        </button>
+
+        <!-- INICIO 20230210 -->
+
+        <button
+          style="margin-left: 2%"
+          *ngIf="isLogged"
+          class="btn btn-warning"
+          (click)="openUpdateForm('edit-experiencemod', experientia.id)"
+          onclick="showTextarea('edit-experiencemod', 'checkexperiencemod')"
+        >
+          <i class="bi bi-trash-fill"></i>EDITAR
+        </button>
+        <!-- FIN 20230210 -->
+      </small>
+      <h4>{{ experientia.nombreE }}</h4>
+      <p>{{ experientia.descripcionE }}</p>
+      <br />
+    </div>
+
+    <div>
+      <form
+        style="display: none; padding-top: 4rem"
+        id="edit-experiencemod"
+        (ngSubmit)="onUpdate(objid.id)"
+        novalidate
+        #f="ngForm"
+      >
+        <div class="form-group">
+          <label for="nombreE">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreE"
+            name="nombreE"
+            [(ngModel)]="nombreEM"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionE">Título</label>
+          <input
+            type="text"
+            class="form-control"
+            id="descripcionE"
+            name="descripcionE"
+            [(ngModel)]="descripcionEM"
+            required
+          />
+        </div>
+
+        <button class="btn btn-primary">Modificar Información</button>
+        <!-- <div>
+              <input id="edit-experience" type="text" oninput="changeParagraph(this.value, 'text-experience')" style="display:none">
+            </div>
+
+            <input type="file" id="fileexperience" onchange="showFile(this, 'text-experience')" style="display:none"> -->
+      </form>
+      <div
+        class="btn-edit"
+        onclick="hideTextarea('edit-experiencemod', 'checkexperiencemod')"
+      >
+        <button
+          style="display: none"
+          id="checkexperiencemod"
+          *ngIf="isLogged"
+          class="btn btn-outline me-2"
+        >
+          <i class="fas fa-check" style="font-size: 24px"></i>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <form
+        style="display: none; padding-top: 4rem"
+        id="edit-experience"
+        (ngSubmit)="onCreate()"
+        novalidate
+        #f="ngForm"
+      >
+        <div class="form-group">
+          <label for="nombreE">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombreE"
+            name="nombreE"
+            [(ngModel)]="nombreE"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="descripcionE">Título</label>
+          <input
+            type="text"
+            class="form-control"
+            id="descripcionE"
+            name="descripcionE"
+            [(ngModel)]="descripcionE"
+            required
+          />
+        </div>
+
+        <button class="btn btn-primary">Agregar Información</button>
+        <div>
+          <input
+            id="edit-experience"
+            type="text"
+            oninput="changeParagraph(this.value, 'text-experience')"
+            style="display: none"
+          />
+        </div>
+
+        <input
+          type="file"
+          id="fileexperience"
+          onchange="showFile(this, 'text-experience')"
+          style="display: none"
+        />
+      </form>
+      <div
+        class="btn-edit"
+        onclick="hideTextarea('edit-experience', 'checkexperience', 'fileexperience')"
+      >
+        <button
+          style="display: none"
+          id="checkexperience"
+          *ngIf="isLogged"
+          class="btn btn-outline me-2"
+        >
+          <i class="fas fa-check" style="font-size: 24px"></i>
+        </button>
+      </div>
+    </div>
   </div>
 </div>

@@ -3,7 +3,23 @@
   "ubication": "Córdoba (Argentina)",
   "position": "Desarrollador Fullstack Trainee",
   "backImage": "https://cdn.pixabay.com/photo/2016/07/30/19/56/banner-1557881__340.jpg",
-  "image": "https://i.ibb.co/9rqX5b7/imagen-Perfil.png",
+  "image": {
+    "miFoto": "https://i.ibb.co/9rqX5b7/imagen-Perfil.png",
+    "argentinaProgramaLogo": "https://i.ibb.co/sjyK7N8/Argentina-Programa-logo.png",
+    "instagramLogo": "https://i.ibb.co/XkV3xJv/instagram-Logo.png",
+    "gitHubLogo": "https://i.ibb.co/tsSJxzB/github-Logo-Blanco.png",
+    "facebookLogo": "https://i.ibb.co/9nxmCVG/Logo-de-Facebook.png",
+    "linkedinLogo": "https://i.ibb.co/vQjgRpS/linkedin.png"
+
+
+  },
+  "redesSociales": {
+    "instagram": "https://www.instagram.com/guerrero.tech/",
+    "gitHub": "https://github.com/guerreroDevIT",
+    "linkedin": "https://ar.linkedin.com/in/d-guerrero-tecnología/",
+    "facebook": "https://www.facebook.com/profile.php?id=1000896450114881/"
+
+  },
 
   "about": "Estoy en reciente formación de las Tecnologías de la Información. (HTML, CSS, Bootstrap, Javascript, Git, Github, Angular, SQL, Java, Spring Boot, MongoDB). Adicionalmente poseo conocimiento en electrónica de control y experiencia en sistemas automatizados de procesos industriales.",
 
